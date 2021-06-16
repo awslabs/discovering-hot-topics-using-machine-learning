@@ -38,6 +38,7 @@ exports.handler = async (event) => {
                     ...(process.env.LOCATION_GEOCODE !== undefined ? {geocode: process.env.LOCATION_GEOCODE}: undefined),
                     include_entities: true,
                     result_type: process.env.QUERY_RESULT_TYPE,
+                    tweet_mode: 'extended',
                     lang: languages[index]
                 };
                 console.debug(`Search API Params: ${JSON.stringify(twitSearchParams)}`);
